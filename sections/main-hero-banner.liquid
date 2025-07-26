@@ -145,10 +145,6 @@
                   class="button{% if block.settings.button_style_secondary_1 %} button--secondary{% else %} button--primary{% endif %}"
                 >
                   {{- block.settings.button_label_1 | escape -}}
-
-                  <span class="button_label_icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="#222222">
-                        <path d="M5.83398 5.83301H14.1673M14.1673 5.83301V14.1663M14.1673 5.83301L5.83398 14.1663" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg></span>  
                 </a>
               {%- endif -%}
               {%- if block.settings.button_label_2 != blank -%}
@@ -161,29 +157,18 @@
                   class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}"
                 >
                   {{- block.settings.button_label_2 | escape -}}
-                  <span class="button_label_icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="#222222">
-                        <path d="M5.83398 5.83301H14.1673M14.1673 5.83301V14.1663M14.1673 5.83301L5.83398 14.1663" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg></span>
                 </a>
               {%- endif -%}
             </div>
         {%- endcase -%}
       {%- endfor -%}
-      {% if section.settings.bottom_btn != blank %}<div class="bottom_button_main">
-      <a href="{{ section.settings.url }}">{{ section.settings.bottom_btn }}
-      </a>
-       <span class="button_label_icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="#FFFFFF">
-                        <path d="M5.83398 5.83301H14.1673M14.1673 5.83301V14.1663M14.1673 5.83301L5.83398 14.1663" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg></span>
-    </div> {% endif %}
     </div>
-    
   </div>
 </div>
 
 {% schema %}
 {
-  "name": "t:sections.image-banner.name",
+  "name": "Main Hero Banner Section",
   "tag": "section",
   "class": "section",
   "disabled_on": {
@@ -199,16 +184,6 @@
       "type": "image_picker",
       "id": "image_2",
       "label": "t:sections.image-banner.settings.image_2.label"
-    },
-    {
-      "type": "text",
-      "id":"bottom_btn",
-      "label": "Bottom Link"
-    },
-    {
-      "type": "url",
-      "label": "url",
-      "id":"url"
     },
     {
       "type": "range",
@@ -514,7 +489,7 @@
   ],
   "presets": [
     {
-      "name": "t:sections.image-banner.presets.name",
+      "name": "Main Hero Banner Section",
       "blocks": [
         {
           "type": "heading"

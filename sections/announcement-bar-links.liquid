@@ -1,0 +1,116 @@
+<div class="announcement_bar_link {{ section.id }}">
+  {% comment %} <div class="page-width"> {% endcomment %}
+    <div class="announcemnt_grid">
+      {% for block in section.blocks %}
+        <div class="announcement_grid_col">
+        {% case block.type %}
+          {% when "collection_link" %}
+            {% if block.settings.collection_link != blank %}
+                <div class="announcement_bar_content">
+              <a href="{{ block.settings.collection_link.url }}" class="announcement_link">
+                {{ block.settings.link_text | escape }}
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="#222222">
+                        <path d="M5.83398 5.83301H14.1673M14.1673 5.83301V14.1663M14.1673 5.83301L5.83398 14.1663" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+              </a>
+            
+            </div>
+            {% endif %}
+          
+          {% when "product_link" %}
+            {% if block.settings.product_link != blank %}
+                <div class="announcement_bar_content">
+              <a href="{{ block.settings.product_link.url }}" class="announcement_link">
+                {{ block.settings.link_text | escape }}
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="#222222">
+                        <path d="M5.83398 5.83301H14.1673M14.1673 5.83301V14.1663M14.1673 5.83301L5.83398 14.1663" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+              </a>
+                
+              </div>
+            {% endif %}
+        {% endcase %}
+    </div>
+      {% endfor %}
+        <div class="announcement_grid_col active">
+          {% if section.settings.btn != blank %} 
+             <div class="announcement_bar_content">
+             <a href="{{ section.settings.url }}">{{ section.settings.btn }}</a>
+             </div>
+
+        {% endif %}
+         </div>
+    </div>
+  {% comment %} </div> {% endcomment %}
+</div>
+
+
+
+
+
+
+{% schema %}
+{
+  "name": "Announcement Bar Links",
+  "class": "announcement-bar-link-section",
+  "tag": "section",
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Announcement Link"
+    },
+    {
+      "type": "text",
+      "id": "btn",
+      "label": "Announcement Link Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_link",
+      "name": "Collection Link",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection_link",
+          "label": "Collection Link"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Title"
+        }
+      ]
+    },
+    {
+      "type": "product_link",
+      "name": "Product Link",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product_link",
+          "label": "Product Link"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement Bar With Links"
+    }
+  ]
+}
+{% endschema %}

@@ -2347,7 +2347,8 @@ input[type='checkbox'] {
 }
 
 .header-wrapper--border-bottom {
-  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  /* border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08); */
+  border-bottom: 1px solid #333333;
 }
 
 .header {
@@ -2546,9 +2547,9 @@ input[type='checkbox'] {
 }
 
 .header__icon .icon {
-  height: 2rem;
-  width: 2rem;
-  fill: none;
+  height: 2.4rem;
+  width: 2.4rem;
+  fill: #333333;
   vertical-align: middle;
 }
 

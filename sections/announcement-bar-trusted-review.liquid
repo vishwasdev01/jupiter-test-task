@@ -1,0 +1,90 @@
+{% style %}
+  .announcement_bar_review.{{ section.id }}{
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+@media screen and (min-width: 750px) {
+    .announcement_bar_review.{{ section.id }}{
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  } 
+{% endstyle %}
+
+<div class="announcement_bar_review section {{ section.id }}" style="background-color: {{ section.settings.background_color }}">
+    <div class="page-width">
+        <div class="announcement_review_box">
+            <div class="announcement_review">
+            {% for i in (1..5) %}<span class="review_star">{% render 'review_star' %}</span> {% endfor %}
+            </div>
+           {% if section.settings.rich_text != blank %}
+             {{ section.settings.rich_text }}
+           {% endif %}
+        </div>
+        <div class="review_shop_now_btn">
+            {% if section.settings.btn != blank %}
+                <a href="{{ section.settings.url }}">{{ section.settings.btn }}</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Announcement Bar Reviews",
+  "class": "announcement-bar-reviews-section",
+  "tag": "section",
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "rich_text",
+      "label": "Announcement Text",
+      "default": "<p>5,000+ Trusted Reviews - 100% Saw Fewer Flakes in 30 Days</p>"
+    },
+    {
+      "type": "text",
+      "id": "btn",
+      "label": "Quick Button"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Quick Link"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#F3F3E6"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement Bar Reviews"
+    }
+  ]
+}
+{% endschema %}
