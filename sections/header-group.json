@@ -50,13 +50,26 @@
         "enable_language_selector": true,
         "enable_customer_avatar": true,
         "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "announcement_bar_trusted_review_L6M3xg": {
+      "type": "announcement-bar-trusted-review",
+      "name": "Announcement Bar Reviews",
+      "settings": {
+        "rich_text": "<p>5,000+ Trusted Reviews - 100% Saw Fewer Flakes in 30 Days</p>",
+        "btn": "Shop Now",
+        "url": "#",
+        "padding_top": 16,
+        "padding_bottom": 16,
+        "background_color": "#F3F3E6"
       }
     }
   },
   "order": [
     "announcement-bar",
-    "header"
+    "header",
+    "announcement_bar_trusted_review_L6M3xg"
   ]
 }
