@@ -12,6 +12,20 @@
     "image_banner": {
       "type": "image-banner",
       "blocks": {
+        "text_3wQYRa": {
+          "type": "text",
+          "settings": {
+            "text": "<strong>#1 Clean Dermatologist-tested</strong>",
+            "text_style": "caption-with-letter-spacing"
+          }
+        },
+        "text_W6rXke": {
+          "type": "text",
+          "settings": {
+            "text": "Dandruff & Dry Scalp Brand",
+            "text_style": "subtitle"
+          }
+        },
         "heading": {
           "type": "heading",
           "settings": {
@@ -29,27 +43,13 @@
             "button_link_2": "#",
             "button_style_secondary_2": false
           }
-        },
-        "text_3wQYRa": {
-          "type": "text",
-          "settings": {
-            "text": "<strong>#1 Clean Dermatologist-tested</strong>",
-            "text_style": "caption-with-letter-spacing"
-          }
-        },
-        "text_W6rXke": {
-          "type": "text",
-          "settings": {
-            "text": "Dandruff & Dry Scalp Brand",
-            "text_style": "subtitle"
-          }
         }
       },
       "block_order": [
-        "heading",
-        "button",
         "text_3wQYRa",
-        "text_W6rXke"
+        "text_W6rXke",
+        "heading",
+        "button"
       ],
       "settings": {
         "image": "shopify://shop_images/Homepage_15Jul_3_tfdedw_3.png",
