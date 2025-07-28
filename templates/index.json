@@ -165,6 +165,64 @@
         "padding_top": 64,
         "padding_bottom": 64
       }
+    },
+    "instagram_slider_tHtXW3": {
+      "type": "instagram-slider",
+      "blocks": {
+        "image_MdR9h4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/22cddf7a570f99df2517e331ca87c590.png"
+          }
+        },
+        "image_zDCLb6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/741a254f1cc0f13584413e773799a27472390f44.jpg"
+          }
+        },
+        "image_EqaTyK": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/404ade9949f1d8c28f496ca39960a4a02d1bd3bf_1.png"
+          }
+        },
+        "image_xUaagn": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/5a2244a2ca04fc020187d72a51398286a7bc67f8_1.jpg"
+          }
+        },
+        "image_FDJKmL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/741a254f1cc0f13584413e773799a27472390f44.jpg"
+          }
+        },
+        "image_Xc6PxV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/404ade9949f1d8c28f496ca39960a4a02d1bd3bf_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_MdR9h4",
+        "image_zDCLb6",
+        "image_EqaTyK",
+        "image_xUaagn",
+        "image_FDJKmL",
+        "image_Xc6PxV"
+      ],
+      "name": "Instagram Slider (Slick)",
+      "settings": {
+        "heading": "Follow us on Instagram",
+        "subheading": "See our latest posts",
+        "button_label": "Follow on Instagram",
+        "button_link": "",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
     }
   },
   "order": [
@@ -172,6 +230,7 @@
     "service_chart_fXtbch",
     "take_the_quiz_ngkAGT",
     "faq_jGpGUe",
-    "blog_article_f8WpPC"
+    "blog_article_f8WpPC",
+    "instagram_slider_tHtXW3"
   ]
 }
