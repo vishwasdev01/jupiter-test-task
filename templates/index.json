@@ -66,9 +66,37 @@
         "mobile_content_alignment": "center",
         "show_text_below": false
       }
+    },
+    "service_chart_fXtbch": {
+      "type": "service-chart",
+      "name": "Service Chart Section",
+      "settings": {
+        "heading": "Us vs Them",
+        "subheading": "Lorem ipsum dolor sit amet consectetur. Quam donec lectus in.",
+        "desktop_image": "shopify://shop_images/Frame_1171277361_2.png",
+        "mobile_image": "shopify://shop_images/Frame_1171278139.png",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "take_the_quiz_ngkAGT": {
+      "type": "take-the-quiz",
+      "name": "Take The Quiz",
+      "settings": {
+        "main_image": "shopify://shop_images/iPhone_14_Pro.png",
+        "badge_image": "shopify://shop_images/Vector_3.png",
+        "badge": "salon-quality",
+        "heading": "Lorem ipsum dolor sit amet consectetur. Pellentesque.",
+        "paragraph": "Lorem ipsum dolor sit amet consectetur. Viverra ut ullamcorper nunc quam placerat. Mollis penatibus hendrerit lectus netus eget a vel consequat. Ornare eu sem ultrices at vitae venenatis viverra est posuere.",
+        "button_label": "TAKE THE QUIZ",
+        "button_link": "",
+        "background_color": "#F3F3E6"
+      }
     }
   },
   "order": [
-    "image_banner"
+    "image_banner",
+    "service_chart_fXtbch",
+    "take_the_quiz_ngkAGT"
   ]
 }
