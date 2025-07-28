@@ -1,0 +1,347 @@
+<!-- Swiper styles -->
+<link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css" />
+
+{% style %}
+  .blog-post-section.{{ section.id }} {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .blog-post-section.{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  /* Swiper custom styles scoped to section */
+  .blog-post-section.{{ section.id }} .swiper {
+    position: relative;
+    width: 100%;
+  }
+
+  .blog-post-section.{{ section.id }} .swiper-wrapper {
+    display: flex;
+  }
+
+  .blog-post-section.{{ section.id }} .swiper-slide {
+    flex-shrink: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .blog-post-section.{{ section.id }} .swiper-button-prev,
+  .blog-post-section.{{ section.id }} .swiper-button-next {
+    color: #143ED4;
+  }
+
+  .blog-post-section.{{ section.id }} .swiper-pagination-bullet {
+    background: #143ED4;
+  }
+
+  .blog-post-section.{{ section.id }} .swiper-button-next,
+.blog-post-section.{{ section.id }} .swiper-button-prev {
+  color: #222222;
+  width: 48px;
+  height: 48px;
+  background: #fff;
+  border: 1px solid #222222;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  font-size: 14px;
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+}
+.blog-post-section.{{ section.id }}  .swiper {
+    width: 100%;
+    padding: 0 20px;
+}
+.blog-post-section.{{ section.id }} .swiper-button-next:after, 
+.blog-post-section.{{ section.id }} .swiper-button-prev:after{
+    font-size: 14px;
+}
+
+.blog-post-section.{{ section.id }} .swiper-button-prev {
+  left: 3px;
+}
+
+.blog-post-section.{{ section.id }} .swiper-button-next {
+  right: 0px;
+}
+  @media screen and (max-width: 750px) {
+    .blog-post-section.{{ section.id }} .swiper-button-prev,
+    .blog-post-section.{{ section.id }} .swiper-button-next {
+        display: none;
+    }
+  }
+{% endstyle %}
+
+<div class="blog-post-section {{ section.id }}">
+  <div class="page-width">
+
+    <div class="blog_header">
+      {% if section.settings.blogtitle != blank %}
+        <div class="blog_title">
+          <h2>{{ section.settings.blogtitle }}</h2>
+        </div>
+      {% endif %}
+
+      {% if section.settings.logoImage != blank %}
+        <div class="blog_logo">
+          <img src="{{ section.settings.logoImage | img_url: "master" }}" alt="Blog logo">
+        </div>
+      {% endif %}
+    </div>
+
+    {% assign blog_handle = section.settings.blog %}
+    {% assign blog = blogs[blog_handle] %}
+
+    {% if blog.articles_count > 0 %}
+      <div class="swiper blog-posts-swiper">
+        <div class="swiper-wrapper">
+          {% for article in blog.articles limit: section.settings.posts_to_show %}
+            <div class="swiper-slide blog-post-grid-col">
+              {% if section.settings.show_featured_image and article.image %}
+                <div class="blog-post__image">
+                  <a href="{{ article.url }}">
+                    <img src="{{ article.image | img_url: "master" }}" alt="{{ article.title }}" loading="lazy" width="" height="">
+                  </a>
+                </div>
+              {% endif %}
+
+              {% if article.tags.size > 0 %}
+                <div class="blog-post__tags">
+                  {% for tag in article.tags %}
+                    <span class="blog-post__tag">
+                      <a href="{{ blog.url }}/tagged/{{ tag | handleize }}">{{ tag }}</a>
+                    </span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+
+              {% if section.settings.show_date or section.settings.show_author %}
+                <div class="blog-post__meta">
+                  {% if section.settings.show_date %}
+                    <span class="blog-post__date">{{ article.published_at | date: '%B %d, %Y' }}</span>
+                  {% endif %}
+                  {% if section.settings.show_author %}
+                    <span class="blog-post__author">by {{ article.author }}</span>
+                  {% endif %}
+                </div>
+              {% endif %}
+
+              <div class="blog-post__content">
+                <h2 class="blog-post__title">
+                  <a href="{{ article.url }}">{{ article.title }}</a>
+                </h2>
+
+                {% if section.settings.show_excerpt %}
+                  <div class="blog-post__excerpt">
+                    <p class="article-card__excerpt rte-width">
+                      {%- if article.excerpt.size > 0 -%}
+                        {{ article.excerpt | strip_html | truncatewords: 30 }}
+                      {%- else -%}
+                        {{ article.content | strip_html | truncatewords: 30 }}
+                      {%- endif -%}
+                    </p>
+                  </div>
+                {% endif %}
+
+                <div class="keep_reading_button">
+                  <a href="{{ article.url }}">
+                    {{- section.settings.keep }}
+                    <span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="#143ED4">
+                        <path d="M5.83398 5.83301H14.1673M14.1673 5.83301V14.1663M14.1673 5.83301L5.83398 14.1663" stroke="#143ED4" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    {% else %}
+      <p>No articles found in the selected blog.</p>
+    {% endif %}
+    <div class="bottom_btn">
+     {% if section.settings.exploar_btn != blank  %}   
+        <a href="{{ section.settings.explorUrl }}">{{ section.settings.exploar_btn }}</a>
+    {%  endif %}
+    </div>
+  </div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  function initSwiperSlider() {
+    if (typeof Swiper !== 'undefined' && document.querySelector('.blog-posts-swiper')) {
+      new Swiper('.blog-posts-swiper', {
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        slidesPerView: 1,
+        spaceBetween: 22,
+        breakpoints: {
+          768: {
+            slidesPerView: 2
+          },
+          1024: {
+            slidesPerView: 3
+          }
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      });
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', initSwiperSlider);
+  document.addEventListener('shopify:section:load', initSwiperSlider);
+</script>
+ 
+{% schema %}
+{
+  "name": "Blog Post Section",
+  "tag": "section",
+  "class": "blog-post-section section",
+  "settings": [
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Select blog"
+    },
+     {
+      "type": "text",
+      "id": "blogtitle",
+      "label": "Blog Title",
+      "default":"Blog Articles"
+    },
+     {
+      "type": "image_picker",
+      "id": "logoImage",
+      "label": "Logo Image"
+    },
+    {
+      "type": "range",
+      "id": "posts_to_show",
+      "label": "Number of posts to show",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "checkbox",
+      "id": "show_featured_image",
+      "label": "Show featured image",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "label": "Show post date",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "label": "Show post author",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_excerpt",
+      "label": "Show post excerpt",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "excerpt_length",
+      "label": "Excerpt length",
+      "options": [
+        {
+          "value": "short",
+          "label": "Short"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "long",
+          "label": "Long"
+        }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "text",
+      "id": "keep",
+      "label": "Blog Links",
+      "default": "KEEP READING"
+    },
+    {
+        "type": "url",
+        "id": "explorUrl",
+        "label": "Quick Link"
+    },
+    {
+        "type": "text",
+        "id": "exploar_btn",
+        "label": "EXPLORE Button",
+        "default":"EXPLORE ALL TOPICS"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog Post Section",
+      "category": "Blog"
+    }
+  ]
+}
+{% endschema %}

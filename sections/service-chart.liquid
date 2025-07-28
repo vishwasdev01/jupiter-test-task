@@ -1,0 +1,108 @@
+{% style %}
+  .service_chart_section.{{ section.id }} {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    border-bottom: 1px solid #333333;
+  }
+  @media screen and (min-width: 750px) {
+    .service_chart_section.{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  @media (max-width: 768px) {
+    .service_chart_section.{{ section.id }}.page-width {
+        padding: 32px 20px 36px
+    }
+  }
+{% endstyle %}
+
+<div class="service_chart_section {{ section.id }} page-width">
+  <div class="service_container">
+    <div class="servie_chart_header">
+      {% if section.settings.heading != blank %}
+        <h2>{{ section.settings.heading }}</h2>
+      {% endif %}
+
+      {% if section.settings.subheading != blank %}
+        <p>{{ section.settings.subheading }}</p>
+      {% endif %}
+    </div>
+    <div class="service-responsive-image">
+      <img
+        src="{{ section.settings.desktop_image | img_url: 'master' }}"
+        alt="Desktop Image"
+        class="desktop-only"
+        width=""
+        height=""
+      >
+      <img
+        src="{{ section.settings.mobile_image | img_url: 'master' }}"
+        alt="Mobile Image"
+        class="mobile-only"
+        width=""
+        height=""
+      >
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Service Chart Section",
+  "class": "service_chart_section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Us vs Them"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Lorem ipsum dolor sit amet consectetur. Quam donec lectus in."
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "Service Chart Section"
+    }
+  ]
+}
+{% endschema %}

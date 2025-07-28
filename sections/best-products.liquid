@@ -1,0 +1,215 @@
+<div class="best_product_section {{ section.id }}">
+  <div class="page_width best_container">
+    <div class="best_product_header">
+      <h2>{{ section.settings.best_heading }}</h2>
+    </div>
+
+    <div class="best_tab_header">
+      <div class="best_header_grid">
+        <div class="best_grid_header_col">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'tab' %}
+                <p>{{ block.settings.tab }}</p>
+            {% endcase %}
+          {% endfor %}
+        </div>
+        <div class="best_grid_header_col">
+          <div class="best_grid_diffrence_btn">
+            <a href="{{ section.settings.url }}">{{ section.settings.tab_url }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="best_product_grid">
+      <div class="best_main_pr_col">
+        <div class="best_main_product">
+          {% assign main_product = all_products[section.settings.mainProduct] %}
+          {% if main_product %}
+            <div class="main_product_image">
+              <img src="{{ main_product.featured_image | img_url: 'master' }}" alt="{{ main_product.title }}">
+            </div>
+            <div class="main_product_details">
+              <h3>{{ main_product.title }}</h3>
+              <p>{{ main_product.description | strip_html | truncate: 120 }}</p>
+              <p class="price">{{ main_product.price | money }}</p>
+            </div>
+          {% else %}
+            <p>No product selected.</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- You can use this second column for the product breakdown -->
+      <div class="best_main_pr_col">
+        <!-- Optional: Right-side content -->
+        <div class="what_inside_header">
+          <div class="what_inside_grid">
+            <h2>{{ section.settings.heading }}</h2>
+            {{ section.settings.paragraph }}
+          </div>
+          <div class="logo_image">
+            <img src="{{ section.settings.badge_image | img_url:'master' }}" width="" height="" loading="lazy">
+          </div>
+        </div>
+        <div class="whats_inside_product_list">
+          {% for block in section.blocks %}
+            {% assign insideProduct = block.settings.productId %}
+            {% assign productnumber = block.settings.productnumber %}
+            {% assign productuse = block.settings.productuse %}
+            {% assign product_quantity = block.settings.product_quantity %}
+            {% assign product_review = block.settings.product_review %}
+            <div class="whats_inside_products">
+              <div class="product_inside_box">
+                <div class="routine_heading">
+                  <h3>
+                    <span>{{ productnumber }}</span>{{ productuse }}
+                  </h3>
+                </div>
+                <div class="routine_product">
+                  <div class="routine_grid">
+                    <div class="routine_col">
+                      <div class="routine_product_image">
+                        <img src="{{ main_product.insideProduct | img_url: 'master' }}" alt="{{ main_product.title }}" width="" height="">
+                      </div> 
+                    </div>
+                    <div class="routine_col"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Best Product",
+  "class": "best-product-section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "best_heading",
+      "label": "Heading",
+      "default": "Find Your System"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Quick Link"
+    },
+    {
+      "type": "text",
+      "id": "tab_url",
+      "label": "Button",
+      "default": "Difference between Dandruff & Dry-Scalp"
+    },
+    {
+      "type": "product",
+      "id": "mainProduct",
+      "label": "Main Product"
+    },
+    {
+      "type": "header",
+      "content": "what's Inside"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_image",
+      "label": "Badge / Logo"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What’s Inside?"
+    },
+    {
+      "type": "textarea",
+      "id": "paragraph",
+      "label": "Paragraph",
+      "default": "One routine, designed to work together"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 64
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Add Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab",
+          "label": "Tab"
+        }
+      ]
+    },
+    {
+      "type": "routin_products",
+      "name": "Best Product",
+      "settings": [
+        {
+          "type": "text",
+          "id": "productuse",
+          "label": "Product Use"
+        },
+        {
+          "type": "text",
+          "id": "productnumber",
+          "label": "Product Number"
+        },
+        {
+          "type": "text",
+          "id": "product_quantity",
+          "label": "Product quantity"
+        },
+        {
+          "type": "text",
+          "id": "product_review",
+          "label": "Product Review"
+        },
+        {
+          "type": "product",
+          "id": "productId",
+          "label": "Add Product"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Best Product",
+      "category": "Content"
+    }
+  ]
+}
+{% endschema %}
