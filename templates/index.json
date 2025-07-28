@@ -145,12 +145,33 @@
         "padding_top": 64,
         "padding_bottom": 64
       }
+    },
+    "blog_article_f8WpPC": {
+      "type": "blog-article",
+      "name": "Blog Post Section",
+      "settings": {
+        "blog": "jupiter_blogs",
+        "blogtitle": "Blog Articles",
+        "logoImage": "shopify://shop_images/Group_52984588_1.png",
+        "posts_to_show": 3,
+        "show_featured_image": true,
+        "show_date": true,
+        "show_author": false,
+        "show_excerpt": true,
+        "excerpt_length": "long",
+        "keep": "KEEP READING",
+        "explorUrl": "#",
+        "exploar_btn": "EXPLORE ALL TOPICS",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
     }
   },
   "order": [
     "image_banner",
     "service_chart_fXtbch",
     "take_the_quiz_ngkAGT",
-    "faq_jGpGUe"
+    "faq_jGpGUe",
+    "blog_article_f8WpPC"
   ]
 }
