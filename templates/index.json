@@ -92,11 +92,65 @@
         "button_link": "",
         "background_color": "#F3F3E6"
       }
+    },
+    "faq_jGpGUe": {
+      "type": "FAQ",
+      "blocks": {
+        "faq_yGw7Tz": {
+          "type": "faq",
+          "settings": {
+            "question": "What conditions does Jupiter treat?",
+            "answer": "Jupiter’s Balancing Shampoo and Restoring Serum are scientifically formulated to treat dandruff, and the flaking and itching that comes with it. Our Zinc Pyrithione based shampoo and serum decrease dandruff on the scalp (woohoo 🥳)."
+          }
+        },
+        "faq_7GVYQC": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Jupiter products paraben free, sulfate free, and phthalate free?",
+            "answer": "Jupiter’s Balancing Shampoo and Restoring Serum are scientifically formulated to treat dandruff, and the flaking and itching that comes with it. Our Zinc Pyrithione based shampoo and serum decrease dandruff on the scalp (woohoo 🥳)."
+          }
+        },
+        "faq_h3nyeQ": {
+          "type": "faq",
+          "settings": {
+            "question": "How long does it take to see results?",
+            "answer": "Jupiter’s Balancing Shampoo and Restoring Serum are scientifically formulated to treat dandruff, and the flaking and itching that comes with it. Our Zinc Pyrithione based shampoo and serum decrease dandruff on the scalp (woohoo 🥳)."
+          }
+        },
+        "faq_PRxNqz": {
+          "type": "faq",
+          "settings": {
+            "question": "Is the Daily Scalp Essential packaging recyclable?",
+            "answer": "Jupiter’s Balancing Shampoo and Restoring Serum are scientifically formulated to treat dandruff, and the flaking and itching that comes with it. Our Zinc Pyrithione based shampoo and serum decrease dandruff on the scalp (woohoo 🥳)."
+          }
+        },
+        "faq_NqnPGm": {
+          "type": "faq",
+          "settings": {
+            "question": "How long does it take to see results from taking the Daily Scalp Essential?",
+            "answer": "Jupiter’s Balancing Shampoo and Restoring Serum are scientifically formulated to treat dandruff, and the flaking and itching that comes with it. Our Zinc Pyrithione based shampoo and serum decrease dandruff on the scalp (woohoo 🥳)."
+          }
+        }
+      },
+      "block_order": [
+        "faq_yGw7Tz",
+        "faq_7GVYQC",
+        "faq_h3nyeQ",
+        "faq_PRxNqz",
+        "faq_NqnPGm"
+      ],
+      "name": "FAQ Section",
+      "settings": {
+        "faq_heading": "Frequenty Asked Questions",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
     }
   },
   "order": [
     "image_banner",
     "service_chart_fXtbch",
-    "take_the_quiz_ngkAGT"
+    "take_the_quiz_ngkAGT",
+    "faq_jGpGUe"
   ]
 }
