@@ -54,6 +54,34 @@
         "padding_bottom": 24
       }
     },
+    "announcement_bar_links_Xih94X": {
+      "type": "announcement-bar-links",
+      "blocks": {
+        "collection_link_p9ERNV": {
+          "type": "collection_link",
+          "settings": {
+            "collection_link": "dry-scalp-care",
+            "link_text": "Dandruff Care"
+          }
+        },
+        "product_link_CrE9YF": {
+          "type": "product_link",
+          "settings": {
+            "product_link": "nourishing-conditioner",
+            "link_text": "DRY SCALP Care"
+          }
+        }
+      },
+      "block_order": [
+        "collection_link_p9ERNV",
+        "product_link_CrE9YF"
+      ],
+      "name": "Announcement Bar With Links",
+      "settings": {
+        "url": "shopify://collections",
+        "btn": "TAKE THE QUIZ"
+      }
+    },
     "announcement_bar_trusted_review_L6M3xg": {
       "type": "announcement-bar-trusted-review",
       "name": "Announcement Bar Reviews",
@@ -63,13 +91,14 @@
         "url": "#",
         "padding_top": 16,
         "padding_bottom": 16,
-        "background_color": "#F3F3E6"
+        "background_color": "#f3f3e6"
       }
     }
   },
   "order": [
     "announcement-bar",
     "header",
+    "announcement_bar_links_Xih94X",
     "announcement_bar_trusted_review_L6M3xg"
   ]
 }
