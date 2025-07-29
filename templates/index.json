@@ -260,7 +260,7 @@
           "type": "tab",
           "settings": {
             "tab_title": "Shampoos",
-            "collection": "",
+            "collection": "shampoos",
             "product_limit": 4,
             "button_label": "Shop All Shampoos"
           }
