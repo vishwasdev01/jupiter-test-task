@@ -73,10 +73,16 @@
 .blog-post-section.{{ section.id }} .swiper-button-next {
   right: 0px;
 }
+.blog-post-section.{{ section.id }} .swiper-pagination {
+  display: none;
+}
   @media screen and (max-width: 750px) {
     .blog-post-section.{{ section.id }} .swiper-button-prev,
     .blog-post-section.{{ section.id }} .swiper-button-next {
         display: none;
+    }
+    .blog-post-section.{{ section.id }} .swiper-pagination {
+      display: block;
     }
   }
 {% endstyle %}

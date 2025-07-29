@@ -1,0 +1,116 @@
+<div class="transformation-section">
+  <div class="transform_cotaniner">
+    <div class="transform_gird">
+      <div class="transformation_col">
+        <div class="transformation-left">
+            <div class="transform_left_grid">
+            <div class="transfrom_left_col">
+          <span>{{ section.settings.label_text }}</span>
+          <h2>{{ section.settings.heading_text }}</h2>
+
+          <div class="logo_image_310">
+            {% if section.settings.icon_area != blank %}
+            <img
+              src="{{ section.settings.icon_area | img_url: 'master' }}"
+              alt="Hair Transformation Image"
+              width=""
+              height=""
+              loading="lazy" 
+            >
+          {% endif %}
+          </div>
+            </div>
+            <div class="transfrom_left_col">
+          {% if section.settings.left_image != blank %}
+            <img
+              src="{{ section.settings.left_image | img_url: 'master' }}"
+              alt="Hair Transformation Image"
+              width=""
+              height=""
+              loading="lazy"
+            >
+          {% endif %}
+        </div>
+    </div>
+        </div>
+      </div>
+      <div class="transformation_col">
+        <div class="transformation-right">
+            <div class="transform_right_grid">
+          {% for block in section.blocks %}
+            <div class="transformation-stat">
+              {% if block.settings.stat1_percent != blank %}
+                <h3>{{ block.settings.stat1_percent }}</h3>
+              {% endif %}
+              {% if block.settings.stat1_text != blank %}
+                <a href="{{ block.settings.url }}">{{ block.settings.stat1_text }}</a>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "30 Day Transformation",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Left Image"
+    },
+    {
+      "type": "text",
+      "id": "label_text",
+      "label": "Label",
+      "default": "SALON-QUALITY"
+    },
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Heading",
+      "default": "A 30 day transformation"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_area",
+      "label": "Icon/Design (optional)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "content_block",
+      "name": "Content Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "stat1_percent",
+          "label": "Stat 1 - Percentage",
+          "default": "100%"
+        },
+        {
+          "type": "text",
+          "id": "stat1_text",
+          "label": "Stat 1 - Text",
+          "default": "SAW FEWER FLAKES"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "30 Day Transformation",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

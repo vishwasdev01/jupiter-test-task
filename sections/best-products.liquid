@@ -14,71 +14,156 @@
             {% endcase %}
           {% endfor %}
         </div>
-        <div class="best_grid_header_col">
+        <div class="best_grid_header_col_btn">
           <div class="best_grid_diffrence_btn">
-            <a href="{{ section.settings.url }}">{{ section.settings.tab_url }}</a>
+            <a href="{{ section.settings.url }}">
+              {{- section.settings.tab_url }}
+              <span class="tab_icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#143ED4" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12 8V16" stroke="#143ED4" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M8 12H16" stroke="#143ED4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
           </div>
         </div>
       </div>
     </div>
 
     <div class="best_product_grid">
-      <div class="best_main_pr_col">
+      <div class="best_main_pr_col_1">
         <div class="best_main_product">
           {% assign main_product = all_products[section.settings.mainProduct] %}
           {% if main_product %}
-            <div class="main_product_image">
-              <img src="{{ main_product.featured_image | img_url: 'master' }}" alt="{{ main_product.title }}">
+            {% if main_product.featured_image != blank %}
+              <div class="main_product_image">
+                <img
+                  src="{{ main_product.featured_image | img_url: 'master' }}"
+                  alt="{{ main_product.title }}"
+                  width=""
+                  height=""
+                >
+              </div>
+            {% endif %}
+            <div class="review_main">
+              <span class="productreview">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 18 17"
+                  fill="none"
+                >
+                  <path d="M9 0L11.5492 5.4306L17.25 6.30678L13.125 10.5315L14.0985 16.5L9 13.6806L3.9015 16.5L4.875 10.5315L0.75 6.30678L6.45075 5.4306L9 0Z" fill="#FE5424"/>
+                </svg>
+              </span>
+              {{ section.settings.review -}}
             </div>
             <div class="main_product_details">
               <h3>{{ main_product.title }}</h3>
-              <p>{{ main_product.description | strip_html | truncate: 120 }}</p>
-              <p class="price">{{ main_product.price | money }}</p>
+             {{ main_product.description }}
             </div>
           {% else %}
             <p>No product selected.</p>
           {% endif %}
+
+          <div class="add_to_cart_btn">
+                      <button type="submit">
+                        <span class="left_space">Add Routine</span> <span class="right_space">{{ main_product.price | money_with_currency }}</span>
+                      </button>
+          </div>
+        </div>
+        <div class="bottom_text">
+        {% if section.settings.bottom_text != blank %}  <p>{{ section.settings.bottom_text }}</p> {% endif %}
         </div>
       </div>
 
       <!-- You can use this second column for the product breakdown -->
-      <div class="best_main_pr_col">
-        <!-- Optional: Right-side content -->
+      <div class="best_main_pr_col_2">
         <div class="what_inside_header">
           <div class="what_inside_grid">
-            <h2>{{ section.settings.heading }}</h2>
-            {{ section.settings.paragraph }}
+            {% if section.settings.heading != blank %}
+              <h2>{{ section.settings.heading }}</h2>
+            {% endif %}
+            {% if section.settings.paragraph != blank %}
+              <p>{{ section.settings.paragraph }}</p>
+            {% endif %}
           </div>
-          <div class="logo_image">
-            <img src="{{ section.settings.badge_image | img_url:'master' }}" width="" height="" loading="lazy">
-          </div>
+          {% if section.settings.badge_image != blank %}
+            <div class="logo_image">
+              <img src="{{ section.settings.badge_image | img_url:'master' }}" width="" height="" loading="lazy">
+            </div>
+          {% endif %}
         </div>
         <div class="whats_inside_product_list">
           {% for block in section.blocks %}
             {% assign insideProduct = block.settings.productId %}
-            {% assign productnumber = block.settings.productnumber %}
-            {% assign productuse = block.settings.productuse %}
-            {% assign product_quantity = block.settings.product_quantity %}
-            {% assign product_review = block.settings.product_review %}
-            <div class="whats_inside_products">
-              <div class="product_inside_box">
-                <div class="routine_heading">
-                  <h3>
-                    <span>{{ productnumber }}</span>{{ productuse }}
-                  </h3>
-                </div>
-                <div class="routine_product">
-                  <div class="routine_grid">
-                    <div class="routine_col">
-                      <div class="routine_product_image">
-                        <img src="{{ main_product.insideProduct | img_url: 'master' }}" alt="{{ main_product.title }}" width="" height="">
-                      </div> 
+
+            {% if insideProduct != blank %}
+              {% assign productnumber = block.settings.productnumber %}
+              {% assign productuse = block.settings.productuse %}
+              {% assign productquantity = block.settings.product_quantity %}
+              {% assign productreview = block.settings.product_review %}
+
+              <div class="whats_inside_products">
+                <div class="product_inside_box">
+                  <div class="routine_heading">
+                    <h3>
+                      {% if productnumber != blank %}
+                        <span>{{ productnumber }}</span>
+                      {% endif %}
+                      {{ productuse }}
+                    </h3>
+                  </div>
+
+                  <div class="routine_product">
+                    <div class="routine_grid">
+                      <div class="routine_col img_col">
+                        <div class="routine_product_image">
+                          <img
+                            src="{{ insideProduct.featured_image | img_url: 'master' }}"
+                            alt="{{ insideProduct.title }}"
+                            width="auto"
+                            height="auto"
+                          >
+                        </div>
+                      </div>
+                      <div class="routine_col">
+                        <div class="inside_product_title_box">
+                          <h2>{{ insideProduct.title }}</h2>
+                          <div class="inside_quantity_review">
+                            <span class="productquantity">{{ productquantity }}</span>
+                            <span class="productreview">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 18 17"
+                                fill="none"
+                              >
+                                <path d="M9 0L11.5492 5.4306L17.25 6.30678L13.125 10.5315L14.0985 16.5L9 13.6806L3.9015 16.5L4.875 10.5315L0.75 6.30678L6.45075 5.4306L9 0Z" fill="#FE5424"/>
+                              </svg>
+                            </span>
+                            {{ productreview -}}
+                          </div>
+                          {% if insideProduct.description != blank %}
+                            <div class="product_description">
+                              {{ insideProduct.description }}
+                            </div>
+                          {% endif %}
+                        </div>
+                      </div>
                     </div>
-                    <div class="routine_col"></div>
+                    <div class="main_add_to_cart_btn">
+                      <button type="submit">
+                        Add <span>{{ insideProduct.price | money_with_currency }}</span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            {% endif %}
           {% endfor %}
         </div>
       </div>
@@ -134,6 +219,17 @@
       "id": "paragraph",
       "label": "Paragraph",
       "default": "One routine, designed to work together"
+    },
+    {
+      "type": "richtext",
+      "id": "review",
+      "label": "Product Review"
+    },
+    {
+      "type": "text",
+      "id":"bottom_text",
+      "label": "Bottom Text",
+      "default":"95% see better results with all three products"
     },
     {
       "type": "header",
@@ -192,7 +288,7 @@
           "label": "Product quantity"
         },
         {
-          "type": "text",
+          "type": "richtext",
           "id": "product_review",
           "label": "Product Review"
         },

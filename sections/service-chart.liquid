@@ -2,7 +2,7 @@
   .service_chart_section.{{ section.id }} {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-    border-bottom: 1px solid #333333;
+    /* border-bottom: 1px solid #333333; */
   }
   @media screen and (min-width: 750px) {
     .service_chart_section.{{ section.id }} {
@@ -29,20 +29,22 @@
       {% endif %}
     </div>
     <div class="service-responsive-image">
+      {% if section.settings.desktop_image != blank %}
       <img
         src="{{ section.settings.desktop_image | img_url: 'master' }}"
         alt="Desktop Image"
         class="desktop-only"
         width=""
         height=""
-      >
+      >{% endif %}
+       {% if section.settings.mobile_image != blank %}
       <img
         src="{{ section.settings.mobile_image | img_url: 'master' }}"
         alt="Mobile Image"
         class="mobile-only"
         width=""
         height=""
-      >
+      >{% endif %}
     </div>
   </div>
 </div>
