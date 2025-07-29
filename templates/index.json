@@ -132,7 +132,7 @@
         "review": "<p>4.5 <strong>(1425)</strong></p>",
         "bottom_text": "95% see better results with all three products",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 64
       }
     },
     "30_day_transformation_BmEUaH": {
@@ -391,7 +391,7 @@
         "explorUrl": "#",
         "exploar_btn": "EXPLORE ALL TOPICS",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 64
       }
     },
     "instagram_slider_tHtXW3": {
@@ -449,7 +449,7 @@
         "button_label": "Follow on Instagram",
         "button_link": "#",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 64
       }
     }
   },
