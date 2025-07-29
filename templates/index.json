@@ -131,8 +131,8 @@
         "paragraph": "One routine, designed to work together",
         "review": "<p>4.5 <strong>(1425)</strong></p>",
         "bottom_text": "95% see better results with all three products",
-        "padding_top": 64,
-        "padding_bottom": 64
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "30_day_transformation_BmEUaH": {
@@ -182,7 +182,9 @@
         "left_image": "shopify://shop_images/22cddf7a570f99df2517e331ca87c590_3.png",
         "label_text": "SALON-QUALITY",
         "heading_text": "A 30 day transformation",
-        "icon_area": "shopify://shop_images/Vector_5.png"
+        "icon_area": "shopify://shop_images/Vector_5.png",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "scrollbar_logo_zbfHFq": {
@@ -235,8 +237,8 @@
       ],
       "name": "Scrolling Logo Carousel",
       "settings": {
-        "padding_top": 48,
-        "padding_bottom": 64
+        "padding_top": 24,
+        "padding_bottom": 24
       }
     },
     "service_chart_fXtbch": {
@@ -247,8 +249,62 @@
         "subheading": "Lorem ipsum dolor sit amet consectetur. Quam donec lectus in.",
         "desktop_image": "shopify://shop_images/Frame_1171277361_2.png",
         "mobile_image": "shopify://shop_images/Frame_1171278139.png",
-        "padding_top": 64,
-        "padding_bottom": 64
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "collection_tab_D4WDYy": {
+      "type": "collection-tab",
+      "blocks": {
+        "tab_8JCbXL": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Shampoos",
+            "collection": "",
+            "product_limit": 4,
+            "button_label": "Shop All Shampoos"
+          }
+        },
+        "tab_cPmDFj": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Shampoos",
+            "collection": "",
+            "product_limit": 4,
+            "button_label": "Shop All Shampoos"
+          }
+        },
+        "tab_CabDXP": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Shampoos",
+            "collection": "",
+            "product_limit": 4,
+            "button_label": "Shop All Shampoos"
+          }
+        },
+        "tab_raDBUE": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Shampoos",
+            "collection": "",
+            "product_limit": 4,
+            "button_label": "Shop All Shampoos"
+          }
+        }
+      },
+      "block_order": [
+        "tab_8JCbXL",
+        "tab_cPmDFj",
+        "tab_CabDXP",
+        "tab_raDBUE"
+      ],
+      "name": "Collection Tabs",
+      "settings": {
+        "heading": "Discover by Category",
+        "logoImage": "shopify://shop_images/Group_52984588_1.png",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "take_the_quiz_ngkAGT": {
@@ -403,6 +459,7 @@
     "30_day_transformation_BmEUaH",
     "scrollbar_logo_zbfHFq",
     "service_chart_fXtbch",
+    "collection_tab_D4WDYy",
     "take_the_quiz_ngkAGT",
     "faq_jGpGUe",
     "blog_article_f8WpPC",
