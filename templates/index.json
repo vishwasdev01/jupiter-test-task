@@ -67,6 +67,56 @@
         "show_text_below": false
       }
     },
+    "30_day_transformation_BmEUaH": {
+      "type": "30-day-transformation",
+      "blocks": {
+        "content_block_TTTQpV": {
+          "type": "content_block",
+          "settings": {
+            "stat1_percent": "100%",
+            "stat1_text": "saw fewer flakes",
+            "url": ""
+          }
+        },
+        "content_block_fz6gt6": {
+          "type": "content_block",
+          "settings": {
+            "stat1_percent": "100%",
+            "stat1_text": "felt less itching",
+            "url": ""
+          }
+        },
+        "content_block_E9QMRN": {
+          "type": "content_block",
+          "settings": {
+            "stat1_percent": "83%",
+            "stat1_text": "said hair appeared thicker",
+            "url": ""
+          }
+        },
+        "content_block_GHzHeF": {
+          "type": "content_block",
+          "settings": {
+            "stat1_percent": "82%",
+            "stat1_text": "less breakage",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_block_TTTQpV",
+        "content_block_fz6gt6",
+        "content_block_E9QMRN",
+        "content_block_GHzHeF"
+      ],
+      "name": "30 Day Transformation",
+      "settings": {
+        "left_image": "shopify://shop_images/22cddf7a570f99df2517e331ca87c590_3.png",
+        "label_text": "SALON-QUALITY",
+        "heading_text": "A 30 day transformation",
+        "icon_area": "shopify://shop_images/Vector_5.png"
+      }
+    },
     "service_chart_fXtbch": {
       "type": "service-chart",
       "name": "Service Chart Section",
@@ -90,7 +140,7 @@
         "paragraph": "Lorem ipsum dolor sit amet consectetur. Viverra ut ullamcorper nunc quam placerat. Mollis penatibus hendrerit lectus netus eget a vel consequat. Ornare eu sem ultrices at vitae venenatis viverra est posuere.",
         "button_label": "TAKE THE QUIZ",
         "button_link": "",
-        "background_color": "#F3F3E6"
+        "background_color": "#f3f3e6"
       }
     },
     "faq_jGpGUe": {
@@ -227,6 +277,7 @@
   },
   "order": [
     "image_banner",
+    "30_day_transformation_BmEUaH",
     "service_chart_fXtbch",
     "take_the_quiz_ngkAGT",
     "faq_jGpGUe",
