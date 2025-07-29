@@ -57,7 +57,10 @@
                 <h3>{{ block.settings.stat1_percent }}</h3>
               {% endif %}
               {% if block.settings.stat1_text != blank %}
-                <a href="{{ block.settings.url }}">{{ block.settings.stat1_text }}</a>
+                <a href="{{ block.settings.url }}">{{ block.settings.stat1_text }} 
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                      <path d="M7 7H17M17 7V17M17 7L7 17" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg></a>
               {% endif %}
             </div>
           {% endfor %}

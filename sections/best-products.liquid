@@ -234,6 +234,12 @@
         </div>
       </div>
     </div>
+
+    <div class="bottom_btn">
+     {% if section.settings.exploar_btn != blank  %}   
+        <a href="{{ section.settings.explorUrl }}">{{ section.settings.exploar_btn }}</a>
+    {%  endif %}
+    </div> 
   </div>
 </div>
 
@@ -296,6 +302,17 @@
       "id":"bottom_text",
       "label": "Bottom Text",
       "default":"95% see better results with all three products"
+    },
+    {
+        "type": "url",
+        "id": "explorUrl",
+        "label": "Quick Link"
+    },
+    {
+        "type": "text",
+        "id": "exploar_btn",
+        "label": "EXPLORE Button",
+        "default":"Shop All Dandruff Care"
     },
     {
       "type": "header",

@@ -22,7 +22,7 @@
   }
 {% endstyle %}
 
-<div class="service_chart_section {{ section.id }} page-width">
+<div class="service_chart_section {{ section.id }}">
   <div class="service_container">
     <div class="servie_chart_header">
       {% if section.settings.heading != blank %}
@@ -55,7 +55,7 @@
 </div>
 {% schema %}
 {
-  "name": "Service Chart Section",
+  "name": "Service Chart Section", 
   "class": "service_chart_section",
   "tag": "section",
   "settings": [

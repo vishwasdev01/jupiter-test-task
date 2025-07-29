@@ -1356,6 +1356,8 @@ span.right_space {
 }
 .transformation-right {
     background: #1E1E1E;
+    height: 100%;
+    width: 100%;
 }
 .transform_right_grid {
     display: flex;
@@ -1386,17 +1388,20 @@ span.right_space {
     font-family:'Antarctican Mono', monospace;
     font-weight: 500;
     font-style: normal;
-    font-size: 14px;
+    font-size: 11px;
     line-height: 150%;
     letter-spacing: -0.28px;
-    text-align: center;
+    text-align: left;
     text-transform: uppercase;
     text-decoration: underline;
     text-decoration-style: solid;
     text-decoration-thickness: 0%;
     text-decoration-skip-ink: auto;
     color: #FFFFFF;
+    display: flex;
+    align-items: center;
 }
+  
 .transform_left_grid {
     display: flex;
     align-items: center;
@@ -1448,7 +1453,7 @@ span.right_space {
     height: 40px;
     object-fit: contain;
 }
-@media (max-width: 767px) {
+@media (max-width: 991px) { 
  .transformation-section .transform_gird {
     flex-wrap: wrap;
 }   
