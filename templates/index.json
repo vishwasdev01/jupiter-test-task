@@ -117,6 +117,65 @@
         "icon_area": "shopify://shop_images/Vector_5.png"
       }
     },
+    "scrollbar_logo_zbfHFq": {
+      "type": "scrollbar_logo",
+      "blocks": {
+        "logo_JfTdg4": {
+          "type": "logo",
+          "settings": {}
+        },
+        "logo_jWQcqm": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Frame_1171276479.png"
+          }
+        },
+        "logo_cJgwzK": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Frame_1171276481.png"
+          }
+        },
+        "logo_fyBwdG": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Frame_1171276481.png"
+          }
+        },
+        "logo_aph8jk": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Frame_1171276481.png"
+          }
+        },
+        "logo_EDgKAj": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Frame_1171276479.png"
+          }
+        },
+        "logo_BpUEEa": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Frame_1171276479.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_JfTdg4",
+        "logo_jWQcqm",
+        "logo_cJgwzK",
+        "logo_fyBwdG",
+        "logo_aph8jk",
+        "logo_EDgKAj",
+        "logo_BpUEEa"
+      ],
+      "name": "Scrolling Logo Carousel",
+      "settings": {
+        "padding_top": 48,
+        "padding_bottom": 64
+      }
+    },
     "service_chart_fXtbch": {
       "type": "service-chart",
       "name": "Service Chart Section",
@@ -278,6 +337,7 @@
   "order": [
     "image_banner",
     "30_day_transformation_BmEUaH",
+    "scrollbar_logo_zbfHFq",
     "service_chart_fXtbch",
     "take_the_quiz_ngkAGT",
     "faq_jGpGUe",
