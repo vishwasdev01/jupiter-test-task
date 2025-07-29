@@ -230,6 +230,7 @@
 
   .banner:not(.banner--mobile-bottom):not(.email-signup-banner) .banner__box {
     background: transparent;
+    padding: 4rem 10px;
   }
 
   .banner:not(.banner--mobile-bottom) .banner__box {

@@ -14,12 +14,10 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
-  .logo-carousel-wrapper {
+  .logo-carousel-wrapper.{{section.id }} {
     overflow: hidden;
     width: 100%;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 20px 0;
+    border-bottom: 1px solid #333333;
   }
 
   .logo-carousel {
@@ -90,7 +88,7 @@
       "step": 4,
       "unit": "px",
       "label": "Top padding",
-      "default": 48
+      "default": 20
     },
     {
       "type": "range",
@@ -100,9 +98,9 @@
       "step": 4,
       "unit": "px",
       "label": "Bottom padding",
-      "default": 64
+      "default": 20
     }
-  ],
+  ], 
   "blocks": [
     {
       "type": "logo",

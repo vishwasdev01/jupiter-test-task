@@ -1,3 +1,68 @@
+{% style %}
+.best_product_section.{{ section.id }} {
+  padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+  padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  margin: 64px 0;
+ border-bottom: 1px solid #3333
+}
+@media screen and (min-width: 750px) {
+  .best_product_section.{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+}
+@media screen and (max-width: 991px) {
+.best_product_section.{{ section.id }} {
+  margin: 36px 0;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.best_product_header h2 {
+    font-size: 28px;
+    line-height: 120%;
+    text-align: center;
+}
+.best_grid_diffrence_btn a {
+    font-size: 13px;
+}
+.best_product_section .best_header_grid {
+    justify-content: center;
+    padding-bottom: 36px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.best_main_pr_col_1 .best_main_product {
+    width: 100%;
+    padding: 16px;
+}
+.main_product_details h3 {
+    font-size: 24px;
+}
+.main_product_details p {
+    font-size: 14px;
+    margin: 0 0 16px;
+}
+.best_header_grid .best_grid_header_col p {
+    font-size: 14px;
+    padding: 12px 0.5px;
+
+}
+.main_product_details ul li {
+    font-size: 12px;
+    padding: 0 0 0 28px;
+}
+.best_product_section .page_width.best_container {
+    padding: 0 20px;
+}
+.best_main_pr_col_1 .bottom_text p {
+    font-size: 12px;
+}
+.best_main_pr_col_1 .bottom_text{
+  padding: 0;
+}
+}
+{% endstyle %}
+
 <div class="best_product_section {{ section.id }}">
   <div class="page_width best_container">
     <div class="best_product_header">
@@ -10,7 +75,7 @@
           {% for block in section.blocks %}
             {% case block.type %}
               {% when 'tab' %}
-                <p>{{ block.settings.tab }}</p>
+                <p class="{% if forloop.first %}active{% endif %}">{{ block.settings.tab }}</p>
             {% endcase %}
           {% endfor %}
         </div>
@@ -20,9 +85,9 @@
               {{- section.settings.tab_url }}
               <span class="tab_icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#143ED4" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M12 8V16" stroke="#143ED4" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M8 12H16" stroke="#143ED4" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#143ED4" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M12 8V16" stroke="#143ED4" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M8 12H16" stroke="#143ED4" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
               </span>
             </a>
@@ -40,46 +105,47 @@
               <div class="main_product_image">
                 <img
                   src="{{ main_product.featured_image | img_url: 'master' }}"
-                  alt="{{ main_product.title }}"
-                  width=""
-                  height=""
-                >
+                  alt="{{ main_product.title }}" loading="lazy" width="" height="">
               </div>
             {% endif %}
             <div class="review_main">
               <span class="productreview">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 18 17"
-                  fill="none"
-                >
-                  <path d="M9 0L11.5492 5.4306L17.25 6.30678L13.125 10.5315L14.0985 16.5L9 13.6806L3.9015 16.5L4.875 10.5315L0.75 6.30678L6.45075 5.4306L9 0Z" fill="#FE5424"/>
-                </svg>
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 18 17" fill="none">
+                                <path d="M9 0L11.5492 5.4306L17.25 6.30678L13.125 10.5315L14.0985 16.5L9 13.6806L3.9015 16.5L4.875 10.5315L0.75 6.30678L6.45075 5.4306L9 0Z" fill="#FE5424"></path>
+                              </svg>
               </span>
               {{ section.settings.review -}}
             </div>
             <div class="main_product_details">
               <h3>{{ main_product.title }}</h3>
-             {{ main_product.description }}
+              {{ main_product.description }}
+            </div>
+
+            <!-- ✅ Main Product Add to Cart -->
+            <div class="add_to_cart_btn">
+              {% if main_product.variants.size > 0 %}
+                <form method="post" action="/cart/add">
+                  <input type="hidden" name="id" value="{{ main_product.variants.first.id }}">
+                  <button type="submit">
+                    <span class="left_space">Add Routine</span> 
+                    <span class="right_space">{{ main_product.price | money_with_currency }}</span>
+                  </button>
+                </form>
+              {% endif %}
             </div>
           {% else %}
             <p>No product selected.</p>
           {% endif %}
 
-          <div class="add_to_cart_btn">
-                      <button type="submit">
-                        <span class="left_space">Add Routine</span> <span class="right_space">{{ main_product.price | money_with_currency }}</span>
-                      </button>
-          </div>
+          
         </div>
         <div class="bottom_text">
-        {% if section.settings.bottom_text != blank %}  <p>{{ section.settings.bottom_text }}</p> {% endif %}
-        </div>
+            {% if section.settings.bottom_text != blank %}
+              <p>{{ section.settings.bottom_text }}</p>
+            {% endif %}
+          </div>
       </div>
 
-      <!-- You can use this second column for the product breakdown -->
       <div class="best_main_pr_col_2">
         <div class="what_inside_header">
           <div class="what_inside_grid">
@@ -92,10 +158,11 @@
           </div>
           {% if section.settings.badge_image != blank %}
             <div class="logo_image">
-              <img src="{{ section.settings.badge_image | img_url:'master' }}" width="" height="" loading="lazy">
+              <img src="{{ section.settings.badge_image | img_url:'master' }}" loading="lazy" width="" height="">
             </div>
           {% endif %}
         </div>
+
         <div class="whats_inside_product_list">
           {% for block in section.blocks %}
             {% assign insideProduct = block.settings.productId %}
@@ -123,10 +190,7 @@
                         <div class="routine_product_image">
                           <img
                             src="{{ insideProduct.featured_image | img_url: 'master' }}"
-                            alt="{{ insideProduct.title }}"
-                            width="auto"
-                            height="auto"
-                          >
+                            alt="{{ insideProduct.title }}" loading="lazy" width="" height="">
                         </div>
                       </div>
                       <div class="routine_col">
@@ -135,14 +199,8 @@
                           <div class="inside_quantity_review">
                             <span class="productquantity">{{ productquantity }}</span>
                             <span class="productreview">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="16"
-                                height="16"
-                                viewBox="0 0 18 17"
-                                fill="none"
-                              >
-                                <path d="M9 0L11.5492 5.4306L17.25 6.30678L13.125 10.5315L14.0985 16.5L9 13.6806L3.9015 16.5L4.875 10.5315L0.75 6.30678L6.45075 5.4306L9 0Z" fill="#FE5424"/>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 18 17" fill="none">
+                                <path d="M9 0L11.5492 5.4306L17.25 6.30678L13.125 10.5315L14.0985 16.5L9 13.6806L3.9015 16.5L4.875 10.5315L0.75 6.30678L6.45075 5.4306L9 0Z" fill="#FE5424"></path>
                               </svg>
                             </span>
                             {{ productreview -}}
@@ -155,11 +213,19 @@
                         </div>
                       </div>
                     </div>
+
+                    <!-- ✅ Routine Product Add to Cart -->
                     <div class="main_add_to_cart_btn">
-                      <button type="submit">
-                        Add <span>{{ insideProduct.price | money_with_currency }}</span>
-                      </button>
+                      {% if insideProduct.variants.size > 0 %}
+                        <form method="post" action="/cart/add">
+                          <input type="hidden" name="id" value="{{ insideProduct.variants.first.id }}">
+                          <button type="submit">
+                            Add <span>{{ insideProduct.price | money_with_currency }}</span>
+                          </button>
+                        </form>
+                      {% endif %}
                     </div>
+
                   </div>
                 </div>
               </div>

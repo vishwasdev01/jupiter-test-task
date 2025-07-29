@@ -376,6 +376,11 @@ span.button_label_icon svg, span.button_label_icon {
 
 
 /* Blog Artical section Css Start */
+.blog_page_width {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 60px;
+  }
 .swiper.blog-posts-swiper .swiper-slide.blog-post-grid-col {
     /* width: calc(100%/ 3 - 22px * 2/3); */
     padding: 24px;
@@ -504,6 +509,12 @@ span.button_label_icon svg, span.button_label_icon {
     border-radius: 100px;
     text-decoration: none;
 }
+@media (max-width: 1200px) {
+    .blog_page_width {
+        padding: 0 20px;
+    }
+}
+
 /* Blog Artical section Css End */
 
 
@@ -949,6 +960,13 @@ span.button_label_icon svg, span.button_label_icon {
     border: 1px solid #000000;
     cursor: pointer;
 }
+.best_header_grid .best_grid_header_col p.active {
+    background: #272724;
+    color: #ffffff;
+    border-radius: 100px;
+    border: 1px solid #000000;
+    cursor: pointer;
+}
 .best_grid_diffrence_btn a {
     font-family: 'Antarctican Mono', monospace;
     font-weight: 500;
@@ -1151,7 +1169,7 @@ span.button_label_icon svg, span.button_label_icon {
     padding-left: 8px;
     border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
-.best_main_product .review_main p {
+ .review_main p {
     display: inline;
     font-family:'HarmoniaSansW01-Regular', sans-serif; 
     font-weight: 400;
@@ -1163,15 +1181,15 @@ span.button_label_icon svg, span.button_label_icon {
     color: #1e1e1e;
     margin: 0;
 }
-.best_main_product .review_main p  strong {
+.review_main p  strong {
     opacity: 60%;
     text-decoration: underline;
 }
-.best_main_product .review_main {
+ .review_main {
     display: flex;
     gap: 2.5px;
 }
-.best_main_product .review_main span {
+.review_main span {
     width: 16px;
     height: 16px;
 }
@@ -1277,6 +1295,35 @@ span.right_space {
     background: #F3F3E6;
     padding: 16px;
 }
+
+
+@media (max-width: 991px) {
+.best_product_grid .best_main_pr_col_2 {
+    display: none;
+}
+.best_product_grid .best_main_pr_col_1 {
+    width: 100%;
+}
+.best_header_grid .best_grid_header_col p.active {
+        font-weight: 700;
+        border: unset;
+        cursor: pointer;
+        color: #1e1e1e;
+        border-bottom: 1px solid #000000;
+        background-color: unset;
+         border-radius: unset;
+}
+.best_header_grid .best_grid_header_col p{
+    background-color: unset;
+    border-radius: unset;
+    border-bottom: 1px solid #000000;
+    cursor: pointer;
+    border: unset;
+    color: #1E1E1E;
+}
+}
+
+
 /* Best Product Section Css End *
 
 

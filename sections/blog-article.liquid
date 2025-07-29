@@ -5,6 +5,9 @@
   .blog-post-section.{{ section.id }} {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+
+    border-bottom: 1px solid #333333;
+    margin: 64px 0px;
   }
 
   @media screen and (min-width: 750px) {
@@ -19,7 +22,6 @@
     position: relative;
     width: 100%;
   }
-
   .blog-post-section.{{ section.id }} .swiper-wrapper {
     display: flex;
   }
@@ -84,11 +86,16 @@
     .blog-post-section.{{ section.id }} .swiper-pagination {
       display: block;
     }
+     .blog-post-section.{{ section.id }} {
+        /* border-bottom: 1px solid #333333; */
+        margin: 36px 0px;
+        padding: 0 0 36px;
+      }
   }
 {% endstyle %}
 
 <div class="blog-post-section {{ section.id }}">
-  <div class="page-width">
+  <div class="blog_page_width">
 
     <div class="blog_header">
       {% if section.settings.blogtitle != blank %}
@@ -99,7 +106,7 @@
 
       {% if section.settings.logoImage != blank %}
         <div class="blog_logo">
-          <img src="{{ section.settings.logoImage | img_url: "master" }}" alt="Blog logo">
+          <img src="{{ section.settings.logoImage | img_url: "master" }}" alt="Blog logo" loading="lazy" width="" height="">
         </div>
       {% endif %}
     </div>
