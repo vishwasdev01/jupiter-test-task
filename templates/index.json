@@ -67,6 +67,74 @@
         "show_text_below": false
       }
     },
+    "best_products_834zCJ": {
+      "type": "best-products",
+      "blocks": {
+        "tab_NwPLzt": {
+          "type": "tab",
+          "settings": {
+            "tab": "Dandruff Care"
+          }
+        },
+        "tab_mq6mbH": {
+          "type": "tab",
+          "settings": {
+            "tab": "Dry-Scalp Care"
+          }
+        },
+        "routin_products_JbJAtd": {
+          "type": "routin_products",
+          "settings": {
+            "productuse": "Shampoo",
+            "productnumber": "01:",
+            "product_quantity": "9.5 fl oz.",
+            "product_review": "<p>4.5 <strong>(1425)</strong></p>",
+            "productId": "balancing-shampoo"
+          }
+        },
+        "routin_products_y7C3jQ": {
+          "type": "routin_products",
+          "settings": {
+            "productuse": "Conditioner",
+            "productnumber": "02:",
+            "product_quantity": "9.5 fl oz.",
+            "product_review": "<p>4.5 <strong>(1425)</strong></p>",
+            "productId": "nourishing-conditioner"
+          }
+        },
+        "routin_products_rpJFnE": {
+          "type": "routin_products",
+          "settings": {
+            "productuse": "SERUM",
+            "productnumber": "03:",
+            "product_quantity": "9.5 fl oz.",
+            "product_review": "<p>4.5 <strong>(1425)</strong></p>",
+            "productId": "restoring-serum"
+          }
+        }
+      },
+      "block_order": [
+        "tab_NwPLzt",
+        "tab_mq6mbH",
+        "routin_products_JbJAtd",
+        "routin_products_y7C3jQ",
+        "routin_products_rpJFnE"
+      ],
+      "name": "Best Product",
+      "settings": {
+        "best_heading": "Find Your System",
+        "url": "#",
+        "tab_url": "Difference between Dandruff & Dry-Scalp",
+        "mainProduct": "advanced-oil-control-trio",
+        "badge_image": "shopify://shop_images/Group_52984588_1.png",
+        "heading": "What’s Inside?",
+        "paragraph": "One routine, designed to work together",
+        "review": "<p>4.5 <strong>(1425)</strong></p>",
+        "bottom_text": "95% see better results with all three products",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
     "30_day_transformation_BmEUaH": {
       "type": "30-day-transformation",
       "blocks": {
@@ -331,6 +399,7 @@
   },
   "order": [
     "image_banner",
+    "best_products_834zCJ",
     "30_day_transformation_BmEUaH",
     "scrollbar_logo_zbfHFq",
     "service_chart_fXtbch",
