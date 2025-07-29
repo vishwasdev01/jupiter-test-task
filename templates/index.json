@@ -268,8 +268,8 @@
         "tab_cPmDFj": {
           "type": "tab",
           "settings": {
-            "tab_title": "Shampoos",
-            "collection": "",
+            "tab_title": "Conditioners",
+            "collection": "conditioners",
             "product_limit": 4,
             "button_label": "Shop All Shampoos"
           }
@@ -277,8 +277,8 @@
         "tab_CabDXP": {
           "type": "tab",
           "settings": {
-            "tab_title": "Shampoos",
-            "collection": "",
+            "tab_title": "Leave-ons",
+            "collection": "leave-ons",
             "product_limit": 4,
             "button_label": "Shop All Shampoos"
           }
@@ -286,8 +286,8 @@
         "tab_raDBUE": {
           "type": "tab",
           "settings": {
-            "tab_title": "Shampoos",
-            "collection": "",
+            "tab_title": "Exfoliators",
+            "collection": "exfoliators",
             "product_limit": 4,
             "button_label": "Shop All Shampoos"
           }
