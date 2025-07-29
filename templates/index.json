@@ -120,10 +120,6 @@
     "scrollbar_logo_zbfHFq": {
       "type": "scrollbar_logo",
       "blocks": {
-        "logo_JfTdg4": {
-          "type": "logo",
-          "settings": {}
-        },
         "logo_jWQcqm": {
           "type": "logo",
           "settings": {
@@ -162,7 +158,6 @@
         }
       },
       "block_order": [
-        "logo_JfTdg4",
         "logo_jWQcqm",
         "logo_cJgwzK",
         "logo_fyBwdG",
@@ -328,7 +323,7 @@
         "heading": "Follow us on Instagram",
         "subheading": "See our latest posts",
         "button_label": "Follow on Instagram",
-        "button_link": "",
+        "button_link": "#",
         "padding_top": 64,
         "padding_bottom": 64
       }
