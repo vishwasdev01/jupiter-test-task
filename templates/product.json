@@ -54,6 +54,14 @@
           "settings": {
             "share_label": "Share"
           }
+        },
+        "portalsphere_product_pricing_table_block_Fdhawp": {
+          "type": "shopify://apps/portalsphere/blocks/product-pricing-table-block/f718d695-5b2e-4a23-b3fa-453b8c5945ba",
+          "settings": {}
+        },
+        "portalsphere_product_pricing_table_block_GMiXVB": {
+          "type": "shopify://apps/portalsphere/blocks/product-pricing-table-block/f718d695-5b2e-4a23-b3fa-453b8c5945ba",
+          "settings": {}
         }
       },
       "block_order": [
@@ -64,7 +72,9 @@
         "quantity_selector",
         "buy_buttons",
         "description",
-        "share"
+        "share",
+        "portalsphere_product_pricing_table_block_Fdhawp",
+        "portalsphere_product_pricing_table_block_GMiXVB"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -99,47 +109,10 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
-    },
-    "175817972078b34cad": {
-      "type": "apps",
-      "blocks": {
-        "portalsphere_product_pricing_table_block_yGp4Tn": {
-          "type": "shopify://apps/portalsphere/blocks/product-pricing-table-block/f718d695-5b2e-4a23-b3fa-453b8c5945ba",
-          "settings": {}
-        },
-        "portalsphere_product_pricing_table_block_jFNTjY": {
-          "type": "shopify://apps/portalsphere/blocks/product-pricing-table-block/f718d695-5b2e-4a23-b3fa-453b8c5945ba",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "portalsphere_product_pricing_table_block_yGp4Tn",
-        "portalsphere_product_pricing_table_block_jFNTjY"
-      ],
-      "settings": {
-        "include_margins": true
-      }
-    },
-    "17581797391c8c6f14": {
-      "type": "apps",
-      "blocks": {
-        "portalsphere_complementary_products_block_pLrrHf": {
-          "type": "shopify://apps/portalsphere/blocks/complementary-products-block/f718d695-5b2e-4a23-b3fa-453b8c5945ba",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "portalsphere_complementary_products_block_pLrrHf"
-      ],
-      "settings": {
-        "include_margins": true
-      }
     }
   },
   "order": [
     "main",
-    "related-products",
-    "175817972078b34cad",
-    "17581797391c8c6f14"
+    "related-products"
   ]
 }
