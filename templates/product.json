@@ -106,10 +106,15 @@
         "portalsphere_product_pricing_table_block_yGp4Tn": {
           "type": "shopify://apps/portalsphere/blocks/product-pricing-table-block/f718d695-5b2e-4a23-b3fa-453b8c5945ba",
           "settings": {}
+        },
+        "portalsphere_product_pricing_table_block_jFNTjY": {
+          "type": "shopify://apps/portalsphere/blocks/product-pricing-table-block/f718d695-5b2e-4a23-b3fa-453b8c5945ba",
+          "settings": {}
         }
       },
       "block_order": [
-        "portalsphere_product_pricing_table_block_yGp4Tn"
+        "portalsphere_product_pricing_table_block_yGp4Tn",
+        "portalsphere_product_pricing_table_block_jFNTjY"
       ],
       "settings": {
         "include_margins": true
