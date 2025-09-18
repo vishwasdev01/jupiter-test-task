@@ -34,6 +34,14 @@
             "swatch_shape": "circle"
           }
         },
+        "portalsphere_product_pricing_table_block_Fdhawp": {
+          "type": "shopify://apps/portalsphere/blocks/product-pricing-table-block/f718d695-5b2e-4a23-b3fa-453b8c5945ba",
+          "settings": {}
+        },
+        "portalsphere_product_pricing_table_block_GMiXVB": {
+          "type": "shopify://apps/portalsphere/blocks/product-pricing-table-block/f718d695-5b2e-4a23-b3fa-453b8c5945ba",
+          "settings": {}
+        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {}
@@ -54,14 +62,6 @@
           "settings": {
             "share_label": "Share"
           }
-        },
-        "portalsphere_product_pricing_table_block_Fdhawp": {
-          "type": "shopify://apps/portalsphere/blocks/product-pricing-table-block/f718d695-5b2e-4a23-b3fa-453b8c5945ba",
-          "settings": {}
-        },
-        "portalsphere_product_pricing_table_block_GMiXVB": {
-          "type": "shopify://apps/portalsphere/blocks/product-pricing-table-block/f718d695-5b2e-4a23-b3fa-453b8c5945ba",
-          "settings": {}
         }
       },
       "block_order": [
@@ -69,12 +69,12 @@
         "title",
         "price",
         "variant_picker",
+        "portalsphere_product_pricing_table_block_Fdhawp",
+        "portalsphere_product_pricing_table_block_GMiXVB",
         "quantity_selector",
         "buy_buttons",
         "description",
-        "share",
-        "portalsphere_product_pricing_table_block_Fdhawp",
-        "portalsphere_product_pricing_table_block_GMiXVB"
+        "share"
       ],
       "settings": {
         "enable_sticky_info": true,
