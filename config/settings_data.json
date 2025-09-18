@@ -142,6 +142,13 @@
       }
     },
     "content_for_index": [],
+    "blocks": {
+      "9204997315196567209": {
+        "type": "shopify://apps/portalsphere/blocks/product-pricing-embed/f718d695-5b2e-4a23-b3fa-453b8c5945ba",
+        "disabled": false,
+        "settings": {}
+      }
+    },
     "color_schemes": {
       "scheme-1": {
         "settings": {
